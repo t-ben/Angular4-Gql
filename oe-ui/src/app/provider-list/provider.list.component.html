@@ -1,0 +1,66 @@
+<div class="container">
+  <div *ngIf='isLoading' id="provider-list-loading">Loading...</div>
+  <div class="table-responsive">
+    <table class="table" id="provider-list">
+      <thead>
+        <tr id="provider-list-headers">
+          <th class="col-lg-2 col-md-2" id="pl-h-select-all">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="selectAll" id="selectAll" value="SelectAll" [checked]='allSelected' (change)='selectAllClicked()'>Select All</label>
+            </div>
+          </th>
+          <th class="col-md-8" id="pl-h-provider">Provider</th>
+          <th class="col-md-2" id="pl-h-uid">Unique ID</th>
+          <th class="col-md-2" id="pl-h-capacity">Capacity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let provider of providers; let i = index">
+          <!--| async-->
+          <tr attr.id="provider-row-{{i}}">
+            <td class="text-left">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="select" [checked]='provider.isSelected' (change)='provider.isSelected = !provider.isSelected'
+                    id={{provider.id}} value={{provider.id}}/>
+                </label>
+              </div>
+            </td>
+
+            <td class="text-left" attr.id="provider-name-{{i}}">
+              <div [style.cursor]="'pointer'" (click)='provider.isExpanded = !provider.isExpanded'>
+                <ng-container>
+                  <small>
+                    <span *ngIf='!provider.isExpanded' class="glyphicon glyphicon-triangle-right" style="margin-right: 10px;" attr.id="provider-exp-btn{{i}}"></span>
+                    <span *ngIf='provider.isExpanded' class="glyphicon glyphicon-triangle-bottom" style="margin-right: 10px;" attr.id="provider-collapse-btn{{i}}"></span>
+                  </small>
+                </ng-container>
+                {{provider.name}}
+              </div>
+              <!-- <span *ngIf='provider.isSelected'>*</span> -->
+            </td>
+            <td class="text-left" attr.id="provider-uid-{{i}}">
+              {{provider.id}}
+            </td>
+            <td>
+              <div class="col-md-5 col-xs-5">
+                {{provider.capacity}}
+                <!-- <input type="text" class="form-control col-1" attr.id="provider-capacity-{{i}}" title="" placeholder="" [style.height]="'auto'"
+                  value="{{provider.capacity}}"> -->
+              </div>
+            </td>
+          </tr>
+          <tr *ngIf='provider.isExpanded' attr.id="provider-expanded-showing-{{i}}">
+            <td></td>
+            <td colspan="3">
+              <!-- Engagements -->
+              <engagement-list attr.id="eng-list-{{i}}" [engagements]='engagements' [provider]='provider' [saveProviderConfig]="saveProviderConfig()">
+              </engagement-list>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>

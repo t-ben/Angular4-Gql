@@ -1,0 +1,30 @@
+dist: trusty
+language: node_js
+node_js:
+  - '8'
+cache:
+  directories:
+    - node_modules
+script:
+  - yarn test
+  - yarn run test:coverage
+  - yarn run test:lint
+branches:
+  only:
+  - develop
+  - qa
+deploy:
+  - provider: heroku
+    app: em-oe-config
+    api_key:
+      secure: "eseeehkHRqWDdSomBctgq6lcMbsjQ0s6vpZxiqw6tyU3BzgkZpEIOEvUskhIIQseoW7Fw9EHHvFVPhpnOTaD1iyQuXM+lzQNZnA6czBxlpYamQ0uCAUu8ManexVjvxG/dOu+oJxgoG7ub1hIS3F+POlD1p3qNWWtQNtTXTp7N8A2sRUFJTQAZqmUMGvIU1h/3XgLAVXvfZdY2WASVlN9FzHH0lQf1wKrk4hF6nMH4dgd02KQMvsyU/pkfo0hhIcI+yj5VXpPMIagjP/SYDrhs3d5y0ypH9hnIwMVcSlmfXfu92q8fgx2Z6hxxpFe6oCLD5CzA5SWBssLlV0BqycSqoB/nwb5i69+DfOiJbkg8rpbLsOIP1oBb7CedbUt2uDGcDeSHn0hcfLL6qZd29ZfBsn2JRPGiDgUH1h9eSV7JnIyE96KLlW6Cq9EGafiqtPy758kPjilz8pXRDnrth+twBp2Gh7Z5v764iv0WalQKFOG3CfiHWIlcEIU+tXF++kAhcmTDEEjM3EaREqRHMLZx2PCXbZ0UAbwUTtw0+WnbZTl87v31GYvjVx9INlGV7w8APTjpF8G3NKUpHa5SZ8eiRiUtMz6RHOtm1hXJTouRHDY3GG8C/ah97Mx1fAMB4Y9xsU/jORR6dgDmeTls7rwb060vZPZUx8qmQMTT3tODdI="
+    on:
+      branch: develop
+  - provider: heroku
+    app: em-oe-config-qa
+    api_key:
+      secure: "CP2qwsyziTvoGveNSlcR2TzDQwYwtz+L056T8kfx/f0CrFTczYT5YQxqjsASkpPTpzxUctukXjqfMObCaw5lN2b5yrCVbkygpQotSVSDyDDWSJIbWHFigPAOCBwsurFwV8ebTU9d4hEgpC1Y/G6cbFaBFeIWVpG13JOmJtM05hgzEiouZ0mj0E+GxkPYzFszTrGqaSEnaUF+2YZi1Eww2rsjNoBBd800dSuZ9XDyly8uLq3tfLzGhbHzpCPd/4Cs5T7O6ORCWO1hXp4Z22oZ3E5Www9I2XJzFTMgJuMf9wpGNv8Mz3BUr37CLJvYCDmPGzol+QwbU46EqiNQC8zKKLI7Wr6GhEGo33CnV9oVeplp68bPW1NVa2Kmuf4Eq0QvV4S7C14uYgEVWZwuFISV6jWUfXjHBaCTepDeBUlO+mujgwFtsv63qU5zbcicLwf2z5FIHDw4P2aoN/ay5I2kkjPhxWXHn+X+PYfjMHQLshmT6Y0zbABvP6Feh+Ym1ygt6Ttx0sTYGhcGsnFV8Fwq+7h9ib3F6+i76OvKOZRNy9Xweomjak8VgESWEUM47zSjAogeuh7m49oYzqkvR3kJLpN5N4qHAhNHLY2daVaA0AeQPycKxF7pkABRisn51INCKcOjj+KD/BKWwATtnLB+OHpjRR7hSspvgmHWsnWdvYA="
+    on:
+      branch: qa
+notifications:
+  slack: ibm-wh-vbc:s7bKgk9c7yrFW4sCBPACVuI1

@@ -1,0 +1,91 @@
+{
+    "NAV": {
+      "RE": "定期的なエンゲージメント",
+      "CAMPAIGN": "キャンペーン",
+      "RULE": "ルール"
+    },
+    "RE_HOME": {
+        "TITLE": "定期的なエンゲージメント",
+        "CREATE_BTN": "エンゲージメントを作成する",
+        "HEALTH_REMINDER": "健康告知",
+        "INFORMATIONAL": "情報提供",
+        "ENGAGEMENT_SETTINGS": "エンゲージメントの設定",
+        "RE_EDIT": "記録係りを編集する"
+    },
+    "LABELS": {
+        "SPINNER_LOADING": "ロード中...",
+        "NAME": "名前：",
+        "START_DATE": "開始日 ：",
+        "END_DATE": "終了日 ：",
+        "WORKLIST": "ワークリスト",
+        "MEDIA_CONTENT": "メディアコンテンツ",
+        "ENGAGEMENT_OUTCOMES": "エンゲージメントの成果",
+        "BASIC_SETTINGS": "基本設定",
+        "ACTIVATE_ENGAGEMENT": "エンゲージメントを有効",
+        "VIEW_WORKLIST": "ワークリストの表示",
+        "TYPE": "タイプ",
+        "VIEW_RULES": "ルールの表示",
+        "SCHEDULE": "スケジュール",
+        "DEFAULT_BUSINESS_DAY": "デフォルトは翌営業日です",
+        "DEFAULT_FOREVER": "デフォルトは永遠",
+        "PROVIDER_INSTRUCTIONS": "プロバイダの指示",
+        "RULE_CATEGORY": "ルールカテゴリ：",
+        "RULE_TYPE": "ルールタイプ：",
+        "CONDITION_TYPE": "条件付きタイプ："
+    },
+    "TITLE": {
+        "SELECT_START_DATE": "開始日を選択",
+        "SELECT_END_DATE": "終了日を選択"
+    },
+    "ERRORS": {
+        "REQUIRED_START_DATE": " * 開始日は必須です ",
+        "REQUIRED_END_DATE": " * 終了日は必須です ",
+        "LESSTHAN_END_DATE": " * 開始日より短い終了日 ",
+        "INVALID_DATE": "有効な日付を入力してください",
+        "AFTER_START_DATE": "開始日の後の日付その氷"
+    },
+    "ALERTS": {
+        "CAMPAIGN_UPDATE_SUCCESS": "キャンペーンは正常に更新されました",
+        "CAMPAIGN_UPDATE_ERROR": "エラー：キャンペーンが正常に更新されない",
+        "RE_UPDATE_SUCCESS": "キャンペーンが成功した",
+        "RE_UPDATE_ERROR": "エラー：キャンペーンが正常に更新されませんでした",
+        "RULE_DELETED": "ルールが削除されました",
+        "NO_RESULTS_FOUND": "結果が見つかりません"
+    },
+    "BTNS": {
+        "CREATE_RE": "定期的なエンゲージメント",
+        "EDIT": "編集",
+        "ADD": "追加",
+        "BACK": "後",
+        "SAVE": "除",
+        "CANCEL": "領事"
+    },
+    "SEARCHBAR": {
+        "TITLE": "探索：",
+        "PLACEHOLDER": "フィルタするテキストを入力してください"
+    },
+    "GRID": {
+        "COLUMNS": {
+            "PRIORITY": "優先",
+            "ENGAGEMENT": "エンゲージメント",
+            "STATE": "状態",
+            "WORKLIST": "作業リスト",
+            "AUTOMATED_SENT": "自動送信",
+            "LIVE_ENGAGEMENT": "ライブエンゲージメント",
+            "DATE_CREATED": "作成日",
+            "CAMPAIGN_NAME": "キャンペーン名",
+            "START_DATE": "開始日",
+            "END_DATE": "終了日",
+            "RULE_NAME": "ルール名",
+            "DESCRIPTION": "説明",
+            "RULE_CATEGORY": "ルールカテゴリ",
+            "RULE_TYPE": "ルールタイプ",
+            "CONDITIONAL_TYPE": "条件付きタイプ"
+        }
+    },
+    "FOOTER": {
+        "CAMPAIGN_DEACTIVATE": "このキャンペーンを無効にする"
+    }
+}
+  
+  

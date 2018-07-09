@@ -1,0 +1,89 @@
+{
+    "NAV": {
+      "RE": "పునరావృతమయ్యే ఎంగేజ్మెంట్",
+      "CAMPAIGN": "ప్రచారం",
+      "RULE": "రూల్"
+    },
+    "RE_HOME": {
+        "TITLE": "పునరావృత కార్యక్రమాలు",
+        "HEALTH_REMINDER": "ఆరోగ్యం రిమైండర్",
+        "INFORMATIONAL": "ఇన్ఫర్మేషనల్",
+        "ENGAGEMENT_SETTINGS": "ఎంగేజ్మెంట్ సెట్టింగ్లు",
+        "RE_EDIT": "పునరావృతమయ్యే ఎంగేజ్మెంట్ను సవరించండి "
+        
+    },
+    "LABELS": {
+        "SPINNER_LOADING": "లోడ్ అవుతోంది ...",
+        "NAME": "పేరు:",
+        "START_DATE": "ప్రారంభ తేదీ:",
+        "END_DATE": "ముగింపు తేదీ:",
+        "WORKLIST": "పని జాబితా",
+        "MEDIA_CONTENT": "మీడియా కంటెంట్",
+        "ENGAGEMENT_OUTCOMES": "ఎంగేజ్మెంట్ అవుట్పున్స్",
+        "BASIC_SETTINGS": "బేసిక్ సెట్టింగ్స్",
+        "ACTIVATE_ENGAGEMENT": "ఎంగేజ్మెంట్ను సక్రియం చేయండి",
+        "VIEW_WORKLIST": "వర్క్ లిస్ట్",
+        "TYPE": "టైప్",
+        "VIEW_RULES": "రూల్స్ చూడండి",
+        "SCHEDULE": "షెడ్యూల్",
+        "DEFAULT_BUSINESS_DAY": "డిఫాల్ట్ తదుపరి వ్యాపార దినం",
+        "DEFAULT_FOREVER": "డిఫాల్ట్ ఎప్పటికీ",
+        "PROVIDER_INSTRUCTIONS": "ప్రొవైడర్ సూచనలు",
+        "RULE_CATEGORY": "రూల్ వర్గం:",
+        "RULE_TYPE": "రూల్ టైప్:",
+        "CONDITION_TYPE": "షరతులతో కూడిన రకం:"
+    },
+    "TITLE": {
+        "SELECT_START_DATE": "ప్రారంభ తేదీని ఎంచుకోండి",
+        "SELECT_END_DATE": "ముగింపు తేదీ ఎంచుకోండి"
+    },
+    "ERRORS": {
+        "REQUIRED_START_DATE": " * ప్రారంభ తేదీ అవసరం ",
+        "REQUIRED_END_DATE": " * ముగింపు తేదీ అవసరం ",
+        "LESSTHAN_END_DATE": " * ప్రారంభ తేదీ కంటే తక్కువ ముగింపు తేదీ ",
+        "INVALID_DATE": "దయచేసి ప్రారంభ తేదీ తర్వాత ఉన్న తేదీని ఉపయోగించండి",
+        "AFTER_START_DATE": "దయచేసి ప్రారంభ తేదీ తర్వాత ఉన్న తేదీని ఉపయోగించండి"
+    },
+    "ALERTS": {
+        "CAMPAIGN_UPDATE_SUCCESS": "ప్రచారం విజయవంతంగా నవీకరించబడింది",
+        "CAMPAIGN_UPDATE_ERROR": "లోపం: ప్రచారం విజయవంతంగా నవీకరించబడలేదు",
+        "RE_UPDATE_SUCCESS": "ప్రచారం విజయవంతంగా నవీకరించబడింది",
+        "RE_UPDATE_ERROR": "లోపం: ప్రచారం విజయవంతంగా నవీకరించబడలేదు",
+        "RULE_DELETED": "రూల్ తొలగించబడింది",
+        "NO_RESULTS_FOUND": "ఫలితాలు కనుగొనబడలేదు"
+    },
+    "BTNS": {
+        "CREATE_RE": "పునరావృతమయ్యే ఎంగేజ్మెంట్ సృష్టించు",
+        "EDIT": "సవరించు",
+        "ADD": "జోడించు",
+        "BACK": "బ్యాక్",
+        "SAVE": "సేవ్ చేయి",
+        "CANCEL": "రద్దు చేయి"
+    },
+    "GRID": {
+        "COLUMNS": {
+            "PRIORITY": "ప్రాధాన్యత",
+            "ENGAGEMENT": "ఎంగేజ్మెంట్",
+            "STATE": "స్టేట్",
+            "WORKLIST": "వర్క్ లిస్ట్",
+            "AUTOMATED_SENT": "ఆటోమేటెడ్ పంపబడింది",
+            "LIVE_ENGAGEMENT": "ప్రత్యక్ష నిశ్చితార్థం",
+            "DATE_CREATED": "తేదీ సృష్టించబడింది",
+            "CAMPAIGN_NAME": "ప్రచార పేరు",
+            "START_DATE": "ప్రారంభ తేదీ",
+            "END_DATE": "ముగింపు తేదీ",
+            "RULE_NAME": "రూల్ పేరు",
+            "DESCRIPTION": "వివరణ",
+            "RULE_CATEGORY": "రూల్ వర్గం",
+            "RULE_TYPE": "రూల్ టైప్",
+            "CONDITIONAL_TYPE": "షరతులతో కూడిన రకం"
+        }
+    },
+    "SEARCHBAR": {
+        "TITLE": "శోధన:",
+        "PLACEHOLDER": "ఫిల్టర్ చేయడానికి ఏదైనా టెక్స్ట్ను ఎంటర్ చెయ్యండి"
+    },
+    "FOOTER": {
+        "CAMPAIGN_DEACTIVATE": "ఈ ప్రచారాన్ని నిష్క్రియం చేయండి~"
+    }
+}

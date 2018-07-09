@@ -1,0 +1,54 @@
+{
+  "name": "basic_server",
+  "version": "0.1.0",
+  "description": "",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git@github.ibm.com:wh-engmgr-oe/oe-config.git"
+  },
+  "main": "./src/server.js",
+  "engines": {
+    "node": "^8",
+    "npm": "^5"
+  },
+  "scripts": {
+    "start:dev": "nodemon ./src/server.js --exec babel-node -e js",
+    "start": "node ./src/server.js",
+    "test": "mocha \"test/**/*.js\" \"src/data/**/*.js\" \"src/schema/**/*.js\"",
+    "test:coverage": "nyc yarn test",
+    "test:lint": "eslint ./ --quiet"
+  },
+  "author": "",
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-plugin-transform-async-generator-functions": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-latest": "^6.23.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-config-google": "^0.9.1",
+    "mocha": "^5.1.1",
+    "nodemon": "^1.11.0",
+    "nyc": "^11.7.1"
+  },
+  "dependencies": {
+    "apollo-engine": "^1.0.4-evans.0",
+    "apollo-server-express": "^1.2.0",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "dataloader": "^1.4.0",
+    "express": "^4.16.3",
+    "graphql": "^0.12.3",
+    "graphql-tools": "^2.15.0",
+    "launchpad-module": "^0.0.0",
+    "moment": "^2.22.0",
+    "mongoose": "^5.1.1",
+    "uuid": "^3.2.1",
+    "validator": "^10.2.0",
+    "webtask-tools": "^3.2.0"
+  }
+}

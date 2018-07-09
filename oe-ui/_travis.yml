@@ -1,0 +1,50 @@
+language: node_js
+node_js:
+  - '8'
+
+services:
+  - docker
+
+env:
+  global:
+    - APP=ui
+    - NAMESPACE=oe
+    - PORT=4200
+
+branches:
+  only:
+  - develop
+  - qa
+
+install:
+  - curl -H "X-JFrog-Art-Api:$ARTIFACTORY_TOKEN" -X GET "https://na.artifactory.swg-devops.com/artifactory/$ARTIFACTORY_DPL_REPO/deploy/travis.zip" -o travis.zip && unzip travis.zip && rm travis.zip
+  - yarn install
+
+script:
+  - yarn run build
+
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script:
+      bash .travis/deploy.sh;
+      kubectl set env deploy/$APP NG_OE_API_URL="https://em-oe-config.herokuapp.com/graphql";
+    on:
+      branch: develop
+  - provider: heroku
+    app: em-oe-ui
+    skip_cleanup: true
+    api_key:
+      secure: "uCHwy2vKOJglx9QSt9gL+k4kNhhOVk/Eq5VroPEuEyfwZBnpHo45UVlOygDu7mo/D71ZYo6AKlr5LCzs0t/T5Kmr8WA4f46gCd3r9SWbBbTNRm0ilKHN5rXLB8aI2yqRH10DnvcZ3krsahFga3xzV/VT0BgGCPIhBTus8ztFEUPhRf95qbFijgHCtO03spWdYz1yK/a1fQ4EUFEjQvwBeZBgvlrccSU9Q0SOzVYx5s3F+PIKB3TzsbgcbKekBzshYcO5/DmllugTN4MvmsKvYQd/ZZgsD/6sMIImZSinfzBpdgS+ysdJwvI2Yy97gC6cLs79WLaQUeeFBGbqkBcnZ1vPQT33CFElu4bun98P59BUU/kIsTIPeAxVU0MWij696O3JdD+uqnNhm2B6fX/V9EuiX3oOYv6YFl1tZQYM1UoDhSMcku4yIJmsMV3RZHUBACqKJswDfF6SQQuHPx7Z6UKn176asr+KK6gHaOqXXLhBySmIg29NmyCsVWxtPHZIXSuUQUMQLbyrBMuk3RqyJ7kp570sa5F+3VHK6wVPYwLoKV8s/zRpxz7IjujFrQpc+g4VOJWmc3gZpIcCtQ5do11aD2mCO2V1XQLQJRE5tEAWdHz85Aau/9PTDsNSL0n5EdHv3MSECSiAc2UsJXAVFh4wknol63YMowsFQeOIdwg="
+    on:
+      branch: develop-old
+  - provider: heroku
+    app: em-oe-ui-qa
+    skip_cleanup: true
+    api_key:
+      secure: "DUlmkb/h24Mw5wi9/Ioiw2i6BQU2FM6Oi3OKCQRKE03q/zDqv/NuwSg/RqO1a1Dov4swOE6tPQD3Noc64jKjOQHcedkqWbtRtc+34Trusdq70GugF84UPq6xurCH4DsigAnpQj6l0bG7+46UzutK/2YhA8XfRWuumASxht4HsphWrSuxEbT6YAq03c1FcjVCvph1Ez3mLqoQLUmq1C9hvEIuOYovpNDzJIIyoc5Q9OBRAYyZQrXCX9D8bTPnDPGuAmgpvAudVeKXNxr0Q7yQanVe+o31dld5tRwoUvuuGSVWeSUwPPxyBR8mWlz1qu/4kcor9VylToeWzv0247LtN9cvsf2vP/rMr76ng51AsSvLUoSCGDjfotCabBx8D52YLjykZFtGDbncR0IK1CgwXl/bfPJL7D9eJkQYI5QdV01q//FF+fLUTiuIeF5WqzLcFg6atYOHzi4x18ZMvhaTcvVrvzzSQXfaO8zD8tSXpxD82PoaUn5Q5pUyizueHzVH2E2xY4BIasD6OaAIFW4gBxI/G98iVQx8rkAmCGxfRnbBhMgV22XAreMfygz+zLUVyIORgOK/Dvnu7sG2aaq7SRVZANHRXuVJWC2pWqxNBSBbDx2XZCbQ10BFKQ1SohnGEcQkFR2q8Kyc9XMdDQ9B701ypb6FEBsG2p0RWnluanc="
+    on:
+      branch: qa
+
+notifications:
+  slack: ibm-wh-vbc:s7bKgk9c7yrFW4sCBPACVuI1

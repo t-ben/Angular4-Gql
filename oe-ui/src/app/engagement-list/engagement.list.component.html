@@ -1,0 +1,76 @@
+<form [formGroup]="providerConfigForm">
+  <div class="form-group text-left" [ngClass]="{'has-error': showFieldErrors(capacity, 'capacity')}" >
+    <label>Capacity
+      <input class="form-control" type="number" formControlName="capacity" required class="form-control" attr.id="provider-config-capacity-input-{{provider.id}}"
+        [ngStyle]="{'width': 'auto', 'height': 'auto'}">
+    </label>
+    <span *ngIf="showFieldErrors(capacity, 'capacity')" class="help-block">{{getFieldError(capacity.errors, 'Capacity')}}</span> 
+  </div>  
+  <div *ngIf='engagementConfigs.controls.length'>
+    <div class="table-responsive">
+      <table class="table" attr.id="provider-engagements-{{provider.id}}">
+        <thead>
+          <tr>
+            <th class="col-md-3" attr.id="{{provider.id}}-eng-h-engagement">Engagement</th>
+            <th class="col-md-3" attr.id="{{provider.id}}-eng-h-incentive">Incentive</th>
+            <th class="col-md-3" attr.id="{{provider.id}}-eng-h-cost">Program Cost</th>
+            <th class="col-md-2" attr.id="{{provider.id}}-eng-h-remove">Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container formArrayName="engagementConfigs">
+            <tr *ngFor='let engConfig of engagementConfigs.controls; let i = index' [formGroupName]="i" 
+                attr.id="eng-config-row-{{provider.id}}-{{engConfig.get('id').value}}">
+              <td class="text-left" [ngClass]="{'has-error': showFieldErrors(engConfig.get('id'))}">
+                <ng-container *ngIf='showEngagementDropdown(i)'>
+                  <select class="form-control" formControlName="id" required attr.id="eng-config-select-{{provider.id}}-{{engConfig.id}}">
+                    <ng-container *ngIf="showSelectOneOption( engConfig.get('id').value )">
+                      <option [value]='-1' [selected]="selected">- Select One -</option>
+                    </ng-container>
+                    <ng-container *ngFor="let eng of getDropdownOptions( engConfig.get('id').value );">
+                      <option [value]='eng.id' [selected]="isSelect(eng.id, engConfig.get('id').value)">{{eng.name}}</option>                      
+                    </ng-container>
+                  </select>          
+                  <span *ngIf="showFieldErrors(engConfig.get('id'))" class="help-block">{{getFieldError(engConfig.get('id').errors, 'Engagement')}}</span> 
+                </ng-container>
+                <ng-container *ngIf='!showEngagementDropdown(i)'>
+                  {{engConfig.get('name').value}} ({{engConfig.get('status').value}})
+                </ng-container>            
+              </td>
+              <td class="text-left" [ngClass]="{'has-error': showFieldErrors(engConfig.get('incentive'))}" 
+                  attr.id="eng-config-incentive-td-{{provider.id}}-{{engConfig.id}}">
+                <input type="number" formControlName="incentive" required class="form-control" attr.id="eng-config-incentive-input-{{provider.id}}-{{engConfig.id}}"
+                  [ngStyle]="{'width': 'auto', 'height': 'auto'}">
+                <span *ngIf="showFieldErrors(engConfig.get('incentive'))" class="help-block">{{getFieldError(engConfig.get('incentive').errors, 'Incentive')}}</span>           
+              </td>
+              <td class="text-left" [ngClass]="{'has-error': showFieldErrors(engConfig.get('cost'))}"
+                  attr.id="eng-config-cost-td-{{provider.id}}-{{engConfig.id}}">
+                <input type="number" formControlName="cost" required class="form-control" attr.id="eng-config-cost-input-{{provider.id}}-{{engConfig.id}}"
+                  [ngStyle]="{'width': 'auto', 'height': 'auto'}">
+                <span *ngIf="showFieldErrors(engConfig.get('cost'))" class="help-block">{{getFieldError(engConfig.get('cost').errors, 'Program Cost')}}</span>
+              </td>
+              <td>
+                <span class="glyphicon glyphicon-trash" [style.cursor]="'pointer'" attr.id="eng-config-remove-{{provider.id}}-{{engConfig.id}}"
+                  title="Remove" (click)='removeEngagement(i)'>
+                </span>    
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <button class="btn btn-primary pull-left" type="button" attr.id="eng-config-add-{{provider.id}}" (click)='addEngagement()'
+      [disabled]="!canAddEngagement()" [style.margin-left.px]="16">Add Engagement
+    </button>
+    <div class="pull-right">
+      <button class="btn btn-primary pull-right" type="button" attr.id="eng-config-save-{{provider.id}}"
+        [disabled]="!canSave()" (click)="saveProvider()">Save
+      </button>
+      <button class="btn btn-default pull-left" type="button" attr.id="eng-config-cancel-{{provider.id}}" (click)="cancelProviderConfig()">Cancel
+      </button>
+    </div>
+  </div>
+</form>
+

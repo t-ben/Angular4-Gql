@@ -1,0 +1,490 @@
+html, body {
+     background: #fff;
+     font-family: 'Helvetica Neue for IBM', 'Helvetica Neue', Helvetica, Arial, Roboto, sans-serif;
+}
+#ibm-content-main {
+     max-width: 1200px;
+     margin: 0 auto;
+}
+#ibm-content-main h1 {
+    margin: 0;
+    border-bottom: 0;
+}
+#ibm-content-main section:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.button {
+     display: inline-block;
+     color: #fff;
+     background: #4178BE;
+     font-size: 14px;
+     font-weight: 700;
+     text-align: center;
+     padding: 12px 30px 10px;
+     width: auto;
+     /*border-radius: 20px;*/
+}
+.button-wrapper {
+     text-align: center;
+     margin-top: 60px;
+}
+section h2 {
+     font-size: 20px;
+     font-weight: 700;
+     border-bottom:1px solid #e0e0e0;
+     margin-bottom: 20px;
+     text-transform: uppercase;
+}
+.more-info {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    background: url('../images/icons/spriteIBM_uxSprite_16.svg') -320px -64px no-repeat;
+    background-size: 432px 80px;
+    position: relative;
+    cursor: pointer;
+}
+.info-popup {
+    display: none;
+    width: 400px;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    position: absolute;
+    z-index: 10000;
+    background: #fff;
+    top: 30px;
+    left: -20px;
+}
+.active .info-popup {
+    display: block;
+}
+.info-popup:before {
+    content: '';
+    position: absolute;
+    border: 10px solid transparent;
+    border-bottom-color: #ccc;
+    top: -21px;
+    left: 15px;
+}
+.info-popup:after {
+    content: '';
+    position: absolute;
+    border: 10px solid transparent;
+    border-bottom-color: #fff;
+    top: -20px;
+    left: 15px;
+}
+.info-popup p {
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+    font-size: 14px;
+    font-weight: normal;
+    color: #454545;
+}
+.info-popup h4 {
+    margin: 0 0 20px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #264a60;
+    padding-bottom: 10px;
+}
+.logo-container img + img {
+    padding-left: 2em;
+}
+/*** Northstar Carousel Overrides for VBC-X ***/
+
+.carousel-wrapper {
+    padding: 20px;
+}
+.carousel-wrapper:before,
+.carousel-wrapper:after {
+     content: '';
+     display: table;
+     clear: both;
+}
+section .button {
+     float: right;
+     margin-right: 55px;
+     margin-top: 2rem;
+}
+.carousel-wrapper .slick-list {
+     margin: 0 35px;
+}
+.carousel-wrapper .slick-slide {
+     margin: 0 20px;
+     padding-bottom: 10px;
+     border-top: 3px solid white;
+}
+.carousel-wrapper .slick-slide:before {
+     content:'';
+     position:absolute;
+     display: block;
+     width:100%;
+     height:3px;
+     background:linear-gradient(to left, #5596E6, #35d6bb);
+     top:-3px;
+     left:0;
+}
+
+.carousel-wrapper .slick-slide h4 {
+     font-weight: 700;
+     margin-top: 10px;
+     margin-bottom: 0;
+}
+
+.carousel-wrapper .slick-slide p {
+     font-size: 14px;
+     line-height: 1.5;
+}
+
+.slick-slider .slick-arrow {
+     background: url('../images/icons/spriteIBM_uxSprite_32.svg');
+     height: 32px;
+     width: 32px;
+     background-size: 864px 160px;
+     position: absolute;
+     top: 40%;
+     border: 0;
+     text-indent: 500%;
+     overflow: hidden;
+     cursor: pointer;
+}
+
+.slick-slider .slick-arrow.vbc-next-arrow {
+     background-position: -384px 0;
+     right: 0;
+}
+.slick-slider .slick-arrow.vbc-prev-arrow {
+     background-position: -448px 0;
+     left: 0;
+}
+.slick-slider .slick-arrow.vbc-next-arrow.slick-disabled {
+     background-position: -384px -128px;
+     cursor: default;
+     opacity: .25;
+}
+.slick-slider .slick-arrow.vbc-prev-arrow.slick-disabled {
+     background-position: -448px -128px;
+     cursor: default;
+     opacity: .25;
+}
+
+.slick-slide .slide-footer {
+     padding: 5px;
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     border-top: 3px solid #f5f5f5;
+}
+
+/**** CHART ICONS ****/
+.slick-slide .slide-footer .chart-icon {
+     background-image: url('../images/icons/spriteIBM_ChartType_50.svg');
+     background-size: 250px 50px;
+     background-color: #4178be;
+     border-radius: 30px;
+     height: 50px;
+     width: 50px;
+     display: inline-block;
+     position: absolute;
+     bottom: 10px;
+     right: 10px;
+}
+.chart-icon.line {
+     background-position: -150px 0;
+}
+.chart-icon.pie {
+     background-position: -200px 0;
+}
+.chart-icon.bar {
+     background-position: 0 0;
+}
+.chart-icon.tree {
+     background-position: -100px 0;
+}
+.chart-icon.plot {
+     background-position: -50px 0;
+}
+
+.slick-slide .slide-footer .bookmark {
+     background: url('../images/icons/spriteIBM_Bookmark_24.svg') -24px 0 no-repeat;
+     background-size: 48px 24px;
+     height: 24px;
+     width: 24px;
+     display: block;
+}
+.slick-slide .slide-footer .bookmark.active {
+     background-position: 0 0;
+}
+
+#content-carousel {
+    height: auto;
+}
+#content-carousel .slick-slide {
+    padding-bottom: 50px;
+}
+#content-carousel .slick-slide p {
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+/**** PERFORMANCE CAROUSEL [NEW] ****/
+#performance-carousel {
+    height: auto;
+}
+.carousel.slick-slider {
+    margin-bottom: 0;
+}
+.performance .carousel-wrapper .slick-slide {
+     margin: 0 5px;
+     border-bottom: 4px solid #f9f9f9;
+}
+.performance .carousel-wrapper .slick-slide h3 {
+    font-size: 18px;
+    margin-top: 12px;
+     margin-bottom: 28px;
+     padding-bottom: 0;
+}
+.performance .carousel-wrapper .slick-slide .goal-wrapper {
+     display: block;
+     width: 100%;
+}
+.performance .carousel-wrapper .slick-slide .goal-amt,
+.performance .carousel-wrapper .slick-slide .goal-change {
+     display: block;
+     border-bottom: 0;
+     text-align: left;
+     padding: 0;
+     margin-bottom: 0;
+     line-height: 1;
+}
+.performance .carousel-wrapper .slick-slide .goal-label {
+    margin: 0;
+    padding: 0;
+}
+.performance .carousel-wrapper .slick-slide .goal-change {
+     text-align: left;
+     border-top: 2px solid #c9c9c9;
+     padding-top: 2px;
+     font-size: 12px;
+
+}
+.performance .carousel-wrapper .slick-slide .goal-desc {
+     font-size: 16px;
+}
+.performance .carousel-wrapper .slick-slide .slide-footer:before,
+.performance .carousel-wrapper .slick-slide .slide-footer:after {
+     content: '';
+     display: table;
+     clear: both;
+}
+.performance .carousel-wrapper .slick-slide .slide-footer a {
+     display: block;
+     height: 24px;
+     width: 24px;
+     background: url('../images/icons/spriteIBM_uxSprite_32.svg');
+     background-size: 648px 120px;
+     background-position: -72px 0;
+     text-indent: 150%;
+     float: right;
+     overflow: hidden;
+}
+/**** GOALS CAROUSEL [OLD] ****/
+.carousel-wrapper.goals {
+     background: #f5f5f5;
+     border: 1px solid #e0e0e0;
+}
+.carousel-wrapper.goals .slick-slider {
+     margin-bottom: 20px;
+}
+.carousel-wrapper.goals .slick-slider .slick-arrow {
+     top: 40%;
+}
+.carousel-wrapper.goals .slick-slide {
+     background: #fff;
+     border: 1px solid #e0e0e0;
+     padding-bottom: 12px;
+     margin: 0 10px;
+}
+.carousel-wrapper.goals .slick-slide h4 {
+     font-weight: 400;
+     font-size: 14px;
+     text-align: center;
+     line-height: 1.25;
+}
+.carousel-wrapper.goals .slick-slide:before {
+     display: none;
+}
+/**** END GOALS ****/
+
+.carousel-wrapper .slick-slide .goal-amt {
+     font-size: 40px;
+     font-weight: 700;
+     color: #4178BE;
+     text-align: center;
+     padding-bottom: 0;
+}
+.carousel-wrapper .slick-slide .goal-amt span {
+     font-size: 20px;
+}
+.carousel-wrapper .slick-slide .goal-change {
+     text-align: center;
+     border-bottom: 1px solid #e0e0e0;
+     font-size: 14px;
+}
+.carousel-wrapper .slick-slide .goal-change span.arrow-up:before {
+     content: '';
+     width: 0;
+     height: 0;
+     display: inline-block;
+     border-left: 5px solid transparent;
+     border-right: 5px solid transparent;
+     border-bottom: 5px solid black;
+     top: -4px;
+     margin-right: 3px;
+     position: relative;
+}
+.carousel-wrapper .slick-slide .goal-change span.arrow-down:before {
+     content: '';
+     width: 0;
+     height: 0;
+     display: inline-block;
+     border-left: 5px solid transparent;
+     border-right: 5px solid transparent;
+     border-top: 5px solid black;
+     top: -4px;
+     margin-right: 3px;
+     position: relative;
+}
+.carousel-wrapper .slick-slide .goal-change span.green {
+     color: #4b8400;
+}
+.carousel-wrapper .slick-slide .goal-change span.arrow-up.green:before {
+     border-bottom-color: #4b8400;
+}
+.carousel-wrapper .slick-slide .goal-change span.arrow-down.green:before {
+     border-top-color: #4b8400;
+}
+.carousel-wrapper .slick-slide .goal-change span.red {
+     color: #e71d32;
+}
+.carousel-wrapper .slick-slide .goal-change span.arrow-up.red:before {
+     border-bottom-color: #e71d32;
+}
+.carousel-wrapper .slick-slide .goal-change span.arrow-down.red:before {
+     border-top-color: #e71d32;
+}
+
+/**** GRID OVERRIDE ****/
+.resources {
+     padding: 20px;
+}
+section.resources .button {
+    margin-top: 0;
+}
+.resources .ibm-columns {
+     width: 100%;
+     max-width: 1200px;
+     padding: 0;
+}
+.resources .ibm-card {
+     border: 0;
+}
+.resources .ibm-card h4 {
+     font-size: 16px;
+     font-weight: 700;
+}
+.resources .ibm-card p {
+     font-size: 14px;
+     line-height: 1.5;
+}
+.resources .ibm-columns .ibm-col-6-2 {
+     width: 33.33%;
+     padding: 0 20px;
+}
+
+/**** CAROUSEL + D3 MISC ****/
+#ibm-content-main {
+     max-width: 1200px;
+     margin: 0 auto;
+}
+.histogram-svg {
+     max-width: 900px;
+     max-height: 900px;
+     width: 100%;
+     height: auto;
+}
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 75%; /* aspect ratio */
+    vertical-align: top;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: visible;
+}
+rect.bar {
+  fill: #25467a;
+}
+
+.bar text {
+  fill: #fff;
+  font: 10px sans-serif;
+}
+
+/*.axis .domain,
+.tick line {
+     stroke: none;
+}*/
+.slick-slide .svg-content-responsive {
+     /*padding: 0;*/
+}
+.line-svg {
+}
+
+.line-svg .line {
+     /*fill: none;
+     stroke: steelblue;
+     stroke-width: 3px;*/
+}
+.slick-slide .axis,
+.slick-slide text,
+.slick-slide .legend {
+     /*display: none;*/
+}
+
+/**** Card Styles ****/
+.ibm-card header,
+.ibm-card footer {
+     padding: 20px;
+     position: relative;
+}
+.ibm-card footer a {
+     display: inline-block;
+     position: relative;
+}
+.ibm-card footer a.ibm-forward-link {
+     padding-left: 30px;
+     line-height: 26px;
+}
+.ibm-card footer a.ibm-forward-link:before {
+     left: 0px;
+     top: 0;
+}
+.ibm-card footer a.share {
+     float: right;
+}

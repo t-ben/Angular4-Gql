@@ -1,0 +1,97 @@
+{
+    "NAV": {
+      "RE": "Recurring Engagement",
+      "CAMPAIGN": "Campaign",
+      "RULE": "Rule"
+    },
+    "RE_HOME": {
+        "TITLE": "Recurring Engagements",
+        "HEALTH_REMINDER": "Health Reminder",
+        "INFORMATIONAL": "Informational",
+        "ENGAGEMENT_SETTINGS": "Engagement Settings",
+        "RE_EDIT": "Edit Recurring Engagement"
+    },
+    "LABELS": {
+        "SPINNER_LOADING": "loading...",
+        "NAME": "Name",
+        "START_DATE": "Start Date",
+        "END_DATE": "End Date",
+        "WORKLIST": "Worklist",
+        "MEDIA_CONTENT": "Media Content",
+        "ENGAGEMENT_OUTCOMES": "Engagement Outcomes",
+        "BASIC_SETTINGS": "Basic Settings",
+        "ACTIVATE_ENGAGEMENT": "Activate Engagement",
+        "VIEW_WORKLIST": "View Worklist",
+        "TYPE": "Type",
+        "VIEW_RULES": "View Rules",
+        "SCHEDULE": "Schedule",
+        "DEFAULT_BUSINESS_DAY": "Default is next business day",
+        "DEFAULT_FOREVER": "Default is forever",
+        "PROVIDER_INSTRUCTIONS": "Provider Instructions",
+        "RULE_CATEGORY": "Rule Category :",
+        "RULE_TYPE": "Rule Type :",
+        "CONDITION_TYPE": "Conditional Type :"
+    },
+    "ENGAGEMENT_SETTINGS": {
+        "HEADER":"Engagement Settings",
+        "GLOBAL_TAB":"Global Rules",
+        "OPTIMIZATION_TAB":"Optimization",
+        "PROVIDER_TAB":"Providers"
+    },
+    "TITLE": {
+        "SELECT_START_DATE": "Select Start Date",
+        "SELECT_END_DATE": "Select End Date"
+    },
+    "ERRORS": {
+        "REQUIRED_START_DATE": " * Start Date is required ",
+        "REQUIRED_END_DATE": " * End Date is required ",
+        "LESSTHAN_END_DATE": " * End date less than start date ",
+        "INVALID_DATE": "Please enter a valid date",
+        "AFTER_START_DATE": "Please use a date that is after the start date"
+    },
+    "ALERTS": {
+        "CAMPAIGN_UPDATE_SUCCESS": "Campaign Updated Successfully",
+        "CAMPAIGN_UPDATE_ERROR": "Error : Campaign Not Updated Successfully",
+        "RE_UPDATE_SUCCESS": "Recurring Engagement Updated Successfully",
+        "RE_UPDATE_ERROR": "Error : Recurring Engagement Not Updated Successfully",
+        "RULE_DELETED": "Rule has been deleted",
+        "NO_RESULTS_FOUND": "No results found"
+    },
+    "BTNS": {
+        "CREATE_RE": "Create Recurring Engagement",
+        "EDIT": "Edit",
+        "ADD": "Add",
+        "BACK": "Back",
+        "SAVE": "Save",
+        "CANCEL": "Cancel"
+    },
+    "GRID": {
+        "COLUMNS": {
+            "PRIORITY": "Priority",
+            "ENGAGEMENT": "Engagement",
+            "STATE": "State",
+            "WORKLIST": "Worklist",
+            "AUTOMATED_SENT": "Automated Sent",
+            "LIVE_ENGAGEMENT": "Live Engagement",
+            "DATE_CREATED": "Date Created",
+            "CAMPAIGN_NAME": "Campaign Name",
+            "START_DATE": "Start Date",
+            "END_DATE": "End Date",
+            "RULE_NAME": "Rule Name",
+            "DESCRIPTION": "Description",
+            "RULE_CATEGORY": "Rule Category",
+            "RULE_TYPE": "Rule Type",
+            "CONDITIONAL_TYPE": "Conditional Type",
+            "RULE_HEAD":"Rule",
+            "RULE_INFORMATIONAL":"Informational",
+            "RULE_HEALTH_REMINDER":"Health Reminder"
+        }
+    },
+    "SEARCHBAR": {
+        "TITLE": "Search:",
+        "PLACEHOLDER": "Enter any text to filter"
+    },
+    "FOOTER": {
+        "CAMPAIGN_DEACTIVATE": "Deactivate this campaign"
+    }
+}
