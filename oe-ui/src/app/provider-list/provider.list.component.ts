@@ -33,8 +33,8 @@ export class ProviderList implements OnInit, OnDestroy {
     }).valueChanges.subscribe(response => {
       this.isLoading = response.loading;
       const list = response.data.getProviders;
-      // tslint:disable-next-line:arrow-return-shorthand
-      this.providers = list.map<Provider>((p) => { return { ...p, isSelected: false, isExpanded: false }; });
+
+      this.providers = list.map((p) => { return { ...p, isSelected: false, isExpanded: false }; });
     });
     this.subscriptions = [...this.subscriptions, providersSubscription];
   }
